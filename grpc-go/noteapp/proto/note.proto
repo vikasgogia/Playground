@@ -1,0 +1,28 @@
+syntax "proto3";
+
+package note;
+
+option go_package = "note/proto;note";
+
+service NoteService {
+    rpc CreateNote(CreateNoteRequest) returns (CreateNoteResponse);
+    rpc GetNote(GetNoteRequest) returns (GetNoteResponse);
+}
+
+message CreateNoteRequest {
+    string title = 1;
+    string content = 2;
+}
+
+message CreateNoteResponse {
+    string id = 1;
+}
+
+message GetNoteRequest {
+    string id = 1;
+}
+
+string GetNoteResponse {
+    string title = 1;
+    string content = 2;
+}
