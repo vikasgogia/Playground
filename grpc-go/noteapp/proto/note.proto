@@ -1,4 +1,4 @@
-syntax "proto3";
+syntax = "proto3";
 
 package note;
 
@@ -22,7 +22,7 @@ message GetNoteRequest {
     string id = 1;
 }
 
-string GetNoteResponse {
+message GetNoteResponse {
     string title = 1;
     string content = 2;
 }
